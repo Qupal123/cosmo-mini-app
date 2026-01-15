@@ -15,11 +15,11 @@ function renderCatalog() {
 
     card.innerHTML = `
       <img 
-        src="${p.img}" 
-        alt="${p.name}"
-        class="product-img"
-        onerror="this.onerror=null;this.src='https://via.placeholder.com/300x180?text=NO+IMAGE';"
+  src="https://via.placeholder.com/300x180.png"
+  alt="test"
+  class="product-img"
       >
+
       <h3>${p.name}</h3>
       <p class="price">${p.price} ₽</p>
       <button onclick="buy(${p.id})">Купить</button>
