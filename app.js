@@ -1,3 +1,5 @@
+alert("NEW APP.JS LOADED");
+
 const app = document.getElementById("app");
 
 // Telegram
