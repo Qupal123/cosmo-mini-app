@@ -2,98 +2,65 @@
   box-sizing: border-box;
 }
 
-/* ===== ФОН (CANVAS) ===== */
-#bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;               /* 🔥 НИЖЕ ВСЕГО */
-  pointer-events: none;
-}
-
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 body {
   margin: 0;
-  padding: 0;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #000;
   color: #fff;
 }
 
+/* фон */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #220044, #000);
+  z-index: 0;
+}
+
+/* контейнер */
 #app {
   position: relative;
-  z-index: 2;               /* 🔥 ВЫШЕ CANVAS */
+  z-index: 1;
   padding-bottom: 40px;
 }
 
-/* ===== КАРТОЧКА ===== */
+/* карточка */
 .card {
-  position: relative;
-  z-index: 3;               /* 🔥 ВЫШЕ ВСЕГО */
-  background: rgba(30, 0, 60, 0.9);
+  background: rgba(40, 0, 80, 0.9);
   border-radius: 18px;
   padding: 16px;
   margin: 14px;
-  box-shadow: 0 0 30px rgba(140, 0, 255, 0.45);
-  animation: fadeIn 0.35s ease;
+  box-shadow: 0 0 25px rgba(120, 0, 255, 0.5);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== КАРТИНКА ===== */
+/* 🔥 КРИТИЧНО ДЛЯ TELEGRAM */
 .product-img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
   display: block;
+  width: 100%;
+  height: auto;        /* ❗ ТОЛЬКО auto */
+  max-height: 220px;
+  object-fit: contain;
   margin-bottom: 12px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* ===== ТЕКСТ ===== */
-h2 {
-  text-align: center;
-  margin: 16px 0;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
 }
 
 h3 {
-  margin: 8px 0 4px;
+  margin: 6px 0;
 }
 
 .price {
   font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-weight: bold;
 }
 
-/* ===== КНОПКИ ===== */
 button {
   width: 100%;
   padding: 14px;
   margin-top: 10px;
   border: none;
   border-radius: 14px;
-  font-weight: 600;
-  color: #fff;
   background: linear-gradient(90deg, #7f00ff, #00c6ff);
-  cursor: pointer;
-}
-
-/* ===== INPUT ===== */
-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
+  color: #fff;
+  font-size: 16px;
 }
