@@ -69,3 +69,6 @@ input {
   border: none;
   outline: none;
 }
+#bg {
+  display: none !important;
+}
