@@ -2,26 +2,27 @@ alert("NEW APP.JS LOADED");
 
 const app = document.getElementById("app");
 
-// Telegram
+// Telegram WebApp
 const tg = window.Telegram?.WebApp;
 tg?.ready();
 
+/* ===== КАТАЛОГ ===== */
 function renderCatalog() {
-  app.innerHTML = "<h2 style='text-align:center'>Каталог</h2>";
+  app.innerHTML = `<h2>Каталог</h2>`;
 
   PRODUCTS.forEach(p => {
     const card = document.createElement("div");
     card.className = "card";
 
     card.innerHTML = `
-      <img 
-  src="https://via.placeholder.com/300x180.png"
-  alt="test"
-  class="product-img"
+      <img
+        src="${p.img}"
+        alt="${p.name}"
+        class="product-img"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/300x180?text=NO+IMAGE';"
       >
-
       <h3>${p.name}</h3>
-      <p class="price">${p.price} ₽</p>
+      <div class="price">${p.price} ₽</div>
       <button onclick="buy(${p.id})">Купить</button>
     `;
 
@@ -29,19 +30,20 @@ function renderCatalog() {
   });
 }
 
+/* ===== ПОКУПКА ===== */
 function buy(id) {
   const product = PRODUCTS.find(p => p.id === id);
 
   app.innerHTML = `
     <div class="card">
-      <img 
-        src="${product.img}" 
+      <img
+        src="${product.img}"
         class="product-img"
         onerror="this.onerror=null;this.src='https://via.placeholder.com/300x180?text=NO+IMAGE';"
       >
       <h3>${product.name}</h3>
       <p>Цена: <b>${product.price} ₽</b></p>
-      <p>Перевести на номер:</p>
+      <p>Перевод на:</p>
       <p><b>${PAYMENT_PHONE}</b></p>
 
       <input placeholder="Почта Supercell ID">
@@ -52,5 +54,5 @@ function buy(id) {
   `;
 }
 
-// старт
+/* ===== СТАРТ ===== */
 renderCatalog();
