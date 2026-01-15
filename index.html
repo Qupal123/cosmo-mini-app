@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IMG TEST</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmo Shop</title>
+
+  <!-- Telegram API -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="background:#000;color:#fff;padding:20px">
+<body>
 
-  <h2>IMAGE TEST</h2>
+  <!-- ФОН (НЕ canvas, а обычный div — безопасно) -->
+  <div class="bg"></div>
 
-  <img
-    src="https://qupal123.github.io/cosmo-mini-app/img/30.png"
-    style="
-      width:100%;
-      max-width:300px;
-      border:5px solid red;
-      display:block;
-    "
-  >
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <div id="app"></div>
 
-  <p>Если ты видишь картинку с красной рамкой — IMG РАБОТАЕТ.</p>
-
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
